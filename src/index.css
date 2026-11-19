@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: #050814;
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  html.tl-light,
+  html.tl-light body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+  }
+}
+
+.forensic-grid-bg {
+  background-color: #050814;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(6, 182, 212, 0.11), transparent 36%),
+    radial-gradient(circle at 88% 18%, rgba(139, 92, 246, 0.11), transparent 38%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+html.tl-light .forensic-grid-bg {
+  background-color: #f1f5f9;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(14, 116, 144, 0.08), transparent 38%),
+    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, 0.07), transparent 40%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+.glass-panel {
+  background: linear-gradient(155deg, rgba(13, 20, 38, 0.88), rgba(7, 11, 24, 0.92));
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow:
+    0 12px 36px -14px rgba(2, 6, 23, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+}
+
+html.tl-light .glass-panel {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.96));
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.14);
+  color: #0f172a;
+}
+
+.glass-card {
+  background: rgba(11, 17, 32, 0.78);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+html.tl-light .glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(14, 116, 144, 0.18);
+  color: #0f172a;
+}
+
+/* Light-mode legible utility adaptations for existing dark-themed text/surface classes */
+html.tl-light .text-white {
+  color: #0f172a;
+}
+
+html.tl-light .text-slate-100,
+html.tl-light .text-slate-200 {
+  color: #1e293b;
+}
+
+html.tl-light .text-slate-300 {
+  color: #334155;
+}
+
+html.tl-light .text-slate-400 {
+  color: #475569;
+}
+
+html.tl-light .text-slate-500 {
+  color: #64748b;
+}
+
+html.tl-light .bg-slate-950\/90,
+html.tl-light .bg-slate-950\/80,
+html.tl-light .bg-slate-950\/70,
+html.tl-light .bg-slate-950\/60,
+html.tl-light .bg-slate-900\/95,
+html.tl-light .bg-slate-900\/80,
+html.tl-light .bg-slate-900\/70,
+html.tl-light .bg-slate-900\/60,
+html.tl-light .bg-slate-900\/50 {
+  background-color: rgba(241, 245, 249, 0.92);
+}
+
+html.tl-light input,
+html.tl-light select,
+html.tl-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+}
+
+/* Preserve media, canvases, heatmaps, and solid brand action buttons in light mode */
+html.tl-light img,
+html.tl-light video,
+html.tl-light canvas {
+  filter: none !important;
+}
+
+html.tl-light .bg-cyan-500,
+html.tl-light .bg-cyan-600,
+html.tl-light .bg-emerald-600,
+html.tl-light .bg-rose-600,
+html.tl-light .bg-amber-600 {
+  color: #ffffff;
+}
+
+@keyframes forensic-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(500%);
+  }
+}
+
+@keyframes radar-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.scan-beam {
+  animation: forensic-scan 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.forensic-pulse {
+  animation: radar-pulse 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-beam,
+  .forensic-pulse {
+    animation: none;
+  }
+}
+
+.tl-text-sm {
+  font-size: 14px;
+}
+
+.tl-text-md {
+  font-size: 15px;
+}
+
+.tl-text-lg {
+  font-size: 17px;
+}
+
+.tl-high-contrast .glass-panel,
+.tl-high-contrast .glass-card {
+  background: #060a16;
+  border-color: rgba(56, 189, 248, 0.55);
+}
+
+.tl-high-contrast {
+  color: #f8fafc;
+}
+
+@media print {
+  body,
+  .forensic-grid-bg {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  .glass-panel,
+  .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+  }
+}

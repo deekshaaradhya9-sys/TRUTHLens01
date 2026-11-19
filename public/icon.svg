@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="100%" stop-color="#0d172e"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="174" fill="none" stroke="rgba(34,211,238,0.2)" stroke-width="4" stroke-dasharray="14 10"/>
+  <path d="M256 88 L392 146 V248 C392 336 333 402 256 428 C179 402 120 336 120 248 V146 Z" fill="rgba(15,23,42,0.85)" stroke="url(#lensGrad)" stroke-width="14"/>
+  <circle cx="256" cy="248" r="76" fill="none" stroke="#22d3ee" stroke-width="10"/>
+  <circle cx="256" cy="248" r="34" fill="#22d3ee" fill-opacity="0.22" stroke="#a78bfa" stroke-width="6"/>
+  <circle cx="256" cy="248" r="10" fill="#e2e8f0"/>
+  <line x1="162" y1="248" x2="350" y2="248" stroke="rgba(34,211,238,0.55)" stroke-width="4"/>
+  <line x1="256" y1="154" x2="256" y2="342" stroke="rgba(167,139,250,0.45)" stroke-width="4"/>
+</svg>
